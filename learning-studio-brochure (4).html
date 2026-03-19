@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learning Studio — Omaxe New Chandigarh</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0b1d3a;
+  --navy2:#0f2347;
+  --navy3:#132952;
+  --navy-card:#0d2040;
+  --navy-light:#1a3460;
+  --yellow:#f5c518;
+  --yellow2:#ffd84d;
+  --yellow3:#ffe680;
+  --yellow-dim:#c9a010;
+  --white:#ffffff;
+  --off-white:#f0f4ff;
+  --muted:#4a6080;
+  --muted2:#7a94b8;
+  --border:#1e3358;
+  --border2:#162840;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden}
+
+/* ── LOGO ── */
+.ls-logo{display:flex;align-items:center;gap:14px}
+.ls-logo svg{width:58px;height:52px;filter:drop-shadow(0 0 14px rgba(245,197,24,.6)) drop-shadow(0 0 28px rgba(245,197,24,.25))}
+.ls-logo-text .name{font-family:'Playfair Display',serif;font-weight:900;font-size:26px;line-height:1;letter-spacing:-.3px;color:var(--white)}
+.ls-logo-text .name span{background:linear-gradient(100deg,var(--yellow3),var(--yellow),var(--yellow-dim));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ls-logo-text .loc{font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted2);margin-top:5px}
+
+/* ── HERO ── */
+.hero{min-height:100vh;background:linear-gradient(150deg,#071228 0%,#0b1d3a 45%,#0d2245 100%);position:relative;display:flex;flex-direction:column;justify-content:center;padding:56px 52px 80px;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 65% 55% at 90% 0%,rgba(245,197,24,.12) 0%,transparent 55%),
+  radial-gradient(ellipse 45% 50% at 0% 100%,rgba(15,35,71,.6) 0%,transparent 60%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(245,197,24,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(245,197,24,.04) 1px,transparent 1px);background-size:48px 48px}
+.hero .ls-logo{margin-bottom:48px;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(245,197,24,.1);border:1px solid rgba(245,197,24,.3);color:var(--yellow);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:8px 20px;margin-bottom:28px;width:fit-content;position:relative}
+.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(40px,7vw,90px);font-weight:900;color:var(--white);line-height:.95;letter-spacing:-2.5px;position:relative}
+.hero-h1 em{display:block;font-style:italic;background:linear-gradient(95deg,var(--yellow3),var(--yellow));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-family:'DM Serif Display',serif;font-style:italic;font-size:clamp(15px,2vw,20px);color:var(--muted2);margin-top:22px;max-width:560px;line-height:1.75}
+.hero-line{width:72px;height:2px;background:linear-gradient(90deg,var(--yellow),transparent);margin:30px 0}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{background:rgba(245,197,24,.08);border:1px solid rgba(245,197,24,.2);color:rgba(255,255,255,.7);font-size:12.5px;padding:8px 16px}
+.chip b{color:var(--yellow2)}
+.hero-scroll{position:absolute;bottom:32px;right:52px;display:flex;align-items:center;gap:10px;color:var(--muted2);font-size:11px;letter-spacing:2px;text-transform:uppercase}
+.hero-scroll::after{content:'';width:44px;height:1px;background:var(--border)}
+
+/* ── STATS BAR ── */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:linear-gradient(105deg,var(--yellow-dim),var(--yellow),var(--yellow2),var(--yellow3))}
+.stat{padding:26px 20px;border-right:1px solid rgba(11,29,58,.2);text-align:center}
+.stat:last-child{border:none}
+.stat-n{font-family:'Playfair Display',serif;font-size:34px;font-weight:900;color:var(--navy);line-height:1}
+.stat-l{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(11,29,58,.55);margin-top:5px}
+
+/* ── SHARED ── */
+section{padding:76px 52px}
+.ey{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--yellow);margin-bottom:14px}
+.st{font-family:'Playfair Display',serif;font-size:clamp(30px,4.5vw,52px);font-weight:900;color:var(--white);line-height:1.05;letter-spacing:-1.2px}
+.st em{font-style:italic;color:var(--yellow2)}
+
+/* ── PAIN ── */
+.pain{background:var(--navy2);border-top:1px solid var(--border)}
+.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;margin-top:48px;align-items:start}
+.pain-left p{font-size:15.5px;color:var(--muted2);line-height:1.9;margin-top:18px}
+.pain-left p b{color:var(--off-white);font-weight:600}
+.pain-left blockquote{margin-top:28px;border-left:3px solid var(--yellow);padding:16px 22px;background:rgba(245,197,24,.06)}
+.pain-left blockquote p{font-family:'DM Serif Display',serif;font-style:italic;font-size:17px;color:rgba(255,255,255,.75);margin-top:0;line-height:1.75}
+.problem-cards{display:flex;flex-direction:column;gap:10px}
+.prob-card{background:rgba(11,29,58,.6);border:1px solid var(--border2);border-left:3px solid #7a1a1a;padding:18px 20px;position:relative;transition:background .3s}
+.prob-card:hover{background:rgba(15,35,71,.8)}
+.prob-card::before{content:'✗';position:absolute;top:16px;right:18px;font-size:13px;color:#c04040;font-weight:700}
+.prob-card h4{font-size:13.5px;font-weight:700;color:rgba(255,120,120,.85);margin-bottom:4px}
+.prob-card p{font-size:12.5px;color:var(--muted2);line-height:1.6}
+
+/* ── SOLUTION ── */
+.solution{background:var(--navy);border-top:1px solid var(--border)}
+.solution-intro{font-size:16px;color:var(--muted2);line-height:1.9;margin-top:20px;max-width:680px}
+.solution-intro b{color:var(--off-white)}
+.vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:48px;background:var(--border)}
+.vs-col{padding:36px 30px}
+.vs-col.bad{background:rgba(20,10,10,.7);border-top:3px solid #4a1010}
+.vs-col.good{background:var(--navy-card);border-top:3px solid var(--yellow)}
+.vs-col-label{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.vs-col.bad .vs-col-label{color:#c04040}
+.vs-col.good .vs-col-label{color:var(--yellow)}
+.vs-items{display:flex;flex-direction:column;gap:10px}
+.vs-item{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:1px solid var(--border2)}
+.vs-col.bad .vs-item{background:rgba(255,255,255,.02)}
+.vs-col.good .vs-item{background:rgba(245,197,24,.04)}
+.vs-item-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:6px}
+.vs-col.bad .vs-item-dot{background:#c04040}
+.vs-col.good .vs-item-dot{background:var(--yellow)}
+.vs-item p{font-size:13px;line-height:1.6}
+.vs-col.bad .vs-item p{color:rgba(255,255,255,.4)}
+.vs-col.good .vs-item p{color:rgba(255,255,255,.75)}
+.vs-col.good .vs-item p b{color:var(--yellow2)}
+
+/* ── EDUCATOR HIGHLIGHT ── */
+.educator{background:linear-gradient(150deg,#071228 0%,#0a1a38 50%,#071228 100%);border-top:2px solid var(--yellow-dim);border-bottom:2px solid var(--yellow-dim);position:relative;overflow:hidden}
+.educator::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(245,197,24,.1) 0%,transparent 60%),
+  radial-gradient(ellipse 40% 40% at 0% 100%,rgba(245,197,24,.05) 0%,transparent 55%);pointer-events:none}
+.educator::after{content:'E';position:absolute;right:-40px;top:50%;transform:translateY(-50%);font-family:'Playfair Display',serif;font-size:500px;font-weight:900;color:rgba(245,197,24,.03);line-height:1;pointer-events:none}
+.educator-accent{height:3px;background:linear-gradient(90deg,transparent,var(--yellow-dim),var(--yellow),var(--yellow2),var(--yellow),var(--yellow-dim),transparent)}
+.educator-inner{padding:76px 52px;position:relative}
+.educator-eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(245,197,24,.12);border:1px solid rgba(245,197,24,.4);color:var(--yellow2);font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:9px 22px;margin-bottom:20px}
+.educator-title{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,60px);font-weight:900;color:var(--white);line-height:.95;letter-spacing:-1.5px;margin-bottom:10px}
+.educator-title em{display:block;font-style:italic;background:linear-gradient(95deg,var(--yellow3),var(--yellow));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.educator-lead{font-family:'DM Serif Display',serif;font-style:italic;font-size:17px;color:var(--muted2);line-height:1.75;max-width:600px;margin-bottom:48px}
+.educator-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.educator-left{display:flex;flex-direction:column;gap:16px}
+.qdeg{padding:26px 28px 26px 30px;background:rgba(245,197,24,.05);border:1px solid rgba(245,197,24,.15);border-left:3px solid var(--yellow);transition:background .3s}
+.qdeg:hover{background:rgba(245,197,24,.09)}
+.qdeg-title{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:var(--white);line-height:1.25}
+.qdeg-uni{font-size:11.5px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--yellow);margin-top:6px}
+.qdeg-note{font-size:13px;color:var(--muted2);margin-top:7px;line-height:1.65}
+.fdiv{display:inline-block;margin-top:12px;background:rgba(245,197,24,.12);border:1px solid rgba(245,197,24,.4);color:var(--yellow2);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px}
+.educator-right{display:flex;flex-direction:column;gap:16px}
+.score-card,.exp-card{display:flex;align-items:center;gap:24px;padding:26px 26px;background:rgba(245,197,24,.05);border:1px solid rgba(245,197,24,.15);border-right:3px solid var(--yellow);transition:background .3s}
+.score-card:hover,.exp-card:hover{background:rgba(245,197,24,.09)}
+.sc-big,.exp-n{font-family:'Playfair Display',serif;font-size:62px;font-weight:900;color:var(--yellow);line-height:1;flex-shrink:0;text-shadow:0 0 40px rgba(245,197,24,.3)}
+.sc-big sup{font-size:22px;vertical-align:super}
+.sc-info h4,.exp-info h4{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--white)}
+.sc-info p,.exp-info p{font-size:13px;color:var(--muted2);margin-top:4px;line-height:1.6}
+.educator-quote{margin-top:32px;padding:26px 30px;background:rgba(245,197,24,.06);border:1px solid rgba(245,197,24,.18);border-left:3px solid var(--yellow);position:relative}
+.educator-quote::before{content:'"';font-family:'Playfair Display',serif;font-size:80px;color:rgba(245,197,24,.2);position:absolute;top:-10px;left:20px;line-height:1}
+.educator-quote p{font-family:'DM Serif Display',serif;font-style:italic;font-size:17px;color:rgba(255,255,255,.65);line-height:1.8;padding-left:32px}
+.educator-quote cite{display:block;margin-top:14px;padding-left:32px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--yellow);font-style:normal}
+
+/* ── PROGRESS ── */
+.progress{background:var(--navy2);border-top:1px solid var(--border)}
+.progress-intro{font-size:15.5px;color:var(--muted2);line-height:1.9;margin-top:20px;max-width:680px}
+.progress-intro b{color:var(--off-white)}
+.progress-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:48px;background:var(--border)}
+.pg-card{background:var(--navy-card);padding:30px 24px;border-bottom:2px solid transparent;transition:border-color .3s,background .3s}
+.pg-card:hover{border-color:var(--yellow);background:var(--navy-light)}
+.pg-icon{font-size:28px;margin-bottom:12px;display:block}
+.pg-card h4{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--white);margin-bottom:7px}
+.pg-card p{font-size:13px;color:var(--muted2);line-height:1.65}
+.pg-tag{display:inline-block;margin-top:12px;background:rgba(245,197,24,.1);border:1px solid rgba(245,197,24,.25);color:var(--yellow);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px}
+
+/* ── CLASSES ── */
+.classes{background:var(--navy);border-top:1px solid var(--border)}
+.class-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;margin-top:48px;background:var(--border)}
+.ccard{background:var(--navy-card);padding:32px 28px;border-bottom:2px solid transparent;transition:border-color .3s,background .3s}
+.ccard:hover{border-color:var(--yellow);background:var(--navy-light)}
+.ccard-grade{font-family:'Playfair Display',serif;font-size:54px;font-weight:900;color:rgba(245,197,24,.1);line-height:1;margin-bottom:6px}
+.ccard-tag{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--yellow);margin-bottom:8px}
+.ccard h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white);margin-bottom:14px}
+.pills{display:flex;flex-wrap:wrap;gap:7px}
+.pill{background:rgba(245,197,24,.07);border:1px solid rgba(245,197,24,.2);color:rgba(255,255,255,.65);font-size:12px;font-weight:600;padding:5px 11px}
+.pill.on{background:rgba(245,197,24,.15);border-color:rgba(245,197,24,.4);color:var(--yellow2)}
+.ccard-note{font-size:13px;color:var(--muted2);margin-top:12px;line-height:1.65}
+
+/* ── BATCH ── */
+.batch{background:var(--navy2);padding:72px 52px;display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:center;border-top:1px solid var(--border)}
+.batch-text p{color:var(--muted2);font-size:15.5px;line-height:1.85;margin-top:20px}
+.bars{display:flex;flex-direction:column;gap:28px}
+.bar-row{display:flex;align-items:center;gap:16px}
+.bar-lbl{font-size:11px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;width:140px;flex-shrink:0;color:var(--muted2)}
+.bar-track{flex:1;height:12px;background:rgba(255,255,255,.04);position:relative;border:1px solid var(--border)}
+.bar-fill{height:100%}
+.bar-fill.them{background:rgba(255,255,255,.08);width:88%}
+.bar-fill.us{width:44%;background:linear-gradient(90deg,var(--yellow-dim),var(--yellow))}
+.bar-val{position:absolute;right:-46px;top:50%;transform:translateY(-50%);font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--white);white-space:nowrap}
+.bar-fill.us .bar-val{color:var(--yellow)}
+
+/* ── TESTIMONIALS ── */
+.testi{background:var(--navy);border-top:1px solid var(--border)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:48px;background:var(--border)}
+.tcard{background:var(--navy-card);padding:32px 26px;border-top:2px solid transparent;transition:border-color .3s,background .3s}
+.tcard:hover{border-color:var(--yellow);background:var(--navy-light)}
+.tq{font-family:'Playfair Display',serif;font-size:56px;color:var(--yellow);line-height:.55;margin-bottom:14px;display:block;opacity:.5}
+.ttext{font-family:'DM Serif Display',serif;font-size:14px;font-style:italic;color:rgba(255,255,255,.6);line-height:1.8}
+.tauthor{margin-top:18px;padding-top:16px;border-top:1px solid var(--border);font-size:13px;font-weight:600;color:var(--off-white)}
+.tauthor span{display:block;font-weight:400;color:var(--muted2);font-size:12px;margin-top:2px}
+
+/* ── CTA ── */
+.cta{background:linear-gradient(130deg,var(--yellow-dim) 0%,var(--yellow) 50%,var(--yellow2) 100%);padding:80px 52px;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(11,29,58,.06) 0,rgba(11,29,58,.06) 1px,transparent 1px,transparent 18px)}
+.cta h2{font-family:'Playfair Display',serif;font-size:clamp(30px,5vw,56px);font-weight:900;color:var(--navy);line-height:1.05;letter-spacing:-1px;position:relative}
+.cta p{font-size:16px;color:rgba(11,29,58,.6);margin-top:14px;position:relative}
+.cta-btns{display:flex;gap:14px;justify-content:center;margin-top:36px;flex-wrap:wrap;position:relative}
+.btn-d{background:var(--navy);color:var(--yellow);padding:16px 40px;font-size:14px;font-weight:700;letter-spacing:.4px;text-decoration:none;display:inline-block;border:2px solid transparent;transition:transform .2s,box-shadow .2s}
+.btn-d:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(11,29,58,.4)}
+.btn-o{background:transparent;color:var(--navy);padding:16px 40px;font-size:14px;font-weight:700;border:2px solid rgba(11,29,58,.4);text-decoration:none;display:inline-block;transition:background .2s}
+.btn-o:hover{background:rgba(11,29,58,.12)}
+
+/* ── FOOTER ── */
+footer{background:#06101f;padding:36px 52px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;border-top:1px solid var(--border)}
+.fnote{font-size:12px;color:rgba(245,197,24,.3);letter-spacing:.4px}
+
+@keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:768px){
+  .hero,section,.educator-inner,.batch{padding:48px 22px}
+  .pain-grid,.vs-grid,.educator-grid,.batch{grid-template-columns:1fr;gap:24px}
+  .stats,.progress-grid,.class-grid,.testi-grid{grid-template-columns:1fr 1fr}
+  footer{flex-direction:column;text-align:center}
+}
+@media(max-width:480px){
+  .stats,.progress-grid,.class-grid,.testi-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-grid"></div>
+  <div class="ls-logo">
+    <svg viewBox="0 0 64 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="sg" cx="50%" cy="58%" r="55%">
+          <stop offset="0%" stop-color="#fff8c0"/>
+          <stop offset="30%" stop-color="#f5e060"/>
+          <stop offset="65%" stop-color="#f5c518"/>
+          <stop offset="100%" stop-color="#c9a010"/>
+        </radialGradient>
+        <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#f5c518" stop-opacity=".45"/>
+          <stop offset="60%" stop-color="#f5c518" stop-opacity=".12"/>
+          <stop offset="100%" stop-color="#f5c518" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="ray" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#fff0a0" stop-opacity=".95"/>
+          <stop offset="100%" stop-color="#f5c518" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <ellipse cx="32" cy="42" rx="28" ry="18" fill="url(#glow)"/>
+      <line x1="2" y1="42" x2="62" y2="42" stroke="rgba(245,197,24,.4)" stroke-width="1.2"/>
+      <line x1="32" y1="24" x2="32" y2="10" stroke="url(#ray)" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="44" y1="27" x2="51" y2="17" stroke="url(#ray)" stroke-width="2.0" stroke-linecap="round"/>
+      <line x1="20" y1="27" x2="13" y2="17" stroke="url(#ray)" stroke-width="2.0" stroke-linecap="round"/>
+      <line x1="50" y1="35" x2="59" y2="30" stroke="url(#ray)" stroke-width="1.6" stroke-linecap="round"/>
+      <line x1="14" y1="35" x2="5"  y2="30" stroke="url(#ray)" stroke-width="1.6" stroke-linecap="round"/>
+      <circle cx="32" cy="42" r="15" fill="url(#sg)"/>
+      <ellipse cx="27" cy="37" rx="4" ry="2.5" fill="rgba(255,255,220,.3)" transform="rotate(-20 27 37)"/>
+    </svg>
+    <div class="ls-logo-text">
+      <div class="name">Learning <span>Studio</span></div>
+      <div class="loc">Omaxe New Chandigarh</div>
+    </div>
+  </div>
+  <div class="eyebrow">Not a tuition class. An education.</div>
+  <h1 class="hero-h1">Your child is being<br>taught to pass.<br><em>Not to learn.</em></h1>
+  <p class="hero-sub">Every colony has tuition classes. But how many actually educate? Learning Studio exists because your child deserves more than completed homework and memorised answers.</p>
+  <div class="hero-line"></div>
+  <div class="chips">
+    <div class="chip">M.Sc. Biochemistry (Hons.) — <b>First Division · PU Chandigarh</b></div>
+    <div class="chip">B.Sc. Biochemistry (Hons.) — <b>First Division · PU Chandigarh</b></div>
+    <div class="chip">Class 10 — <b>95%</b></div>
+    <div class="chip"><b>3 Years</b> Teaching Experience</div>
+  </div>
+  <div class="hero-scroll">Scroll to explore</div>
+</header>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="stat-n">8–9</div><div class="stat-l">Students per batch</div></div>
+  <div class="stat"><div class="stat-n">3+</div><div class="stat-l">Years teaching</div></div>
+  <div class="stat"><div class="stat-n">95%</div><div class="stat-l">Educator's Class X</div></div>
+  <div class="stat"><div class="stat-n">M.Sc.</div><div class="stat-l">First Division · PU</div></div>
+</div>
+
+<!-- PAIN -->
+<section class="pain">
+  <p class="ey">The problem no one talks about</p>
+  <h2 class="st">Tuition is everywhere.<br><em>Education is rare.</em></h2>
+  <div class="pain-grid">
+    <div class="pain-left">
+      <p>Omaxe New Chandigarh has no shortage of tuition classes. Walk down any street and you'll find them. <b>But ask yourself honestly — is your child actually learning?</b></p>
+      <p>Or are they simply getting their homework done, mugging up answers before exams, and forgetting everything the moment results are out?</p>
+      <p>Most tuition centres are not designed to educate. They are designed to keep children busy, reassure parents, and fill seats. <b>15 to 18 students in a room, a teacher rushing through chapters</b> — this is not teaching. This is crowd management.</p>
+      <blockquote><p>"A child who only learns to pass exams has not been educated. They have been trained to forget."</p></blockquote>
+    </div>
+    <div class="problem-cards">
+      <div class="prob-card"><h4>Homework completion, not understanding</h4><p>The homework gets done — but ask your child why, and they won't know. The concept was never explained.</p></div>
+      <div class="prob-card"><h4>15–18 students, zero individual attention</h4><p>In a class of 18, your child is invisible. Doubts go unasked. Gaps go unnoticed. The teacher moves on.</p></div>
+      <div class="prob-card"><h4>Exam-focused, not knowledge-focused</h4><p>Children are taught what to write in exams, not what to understand. The moment exams end, everything is forgotten.</p></div>
+      <div class="prob-card"><h4>No progress tracking, no accountability</h4><p>Parents have no idea how their child is actually doing until the report card arrives. By then it is too late.</p></div>
+      <div class="prob-card"><h4>No structure — just an informal arrangement</h4><p>No tests, no assignments, no feedback. It drifts without direction, goals, or any sense of accountability.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="solution">
+  <p class="ey">The Learning Studio difference</p>
+  <h2 class="st">This is what an<br><em>educator looks like.</em></h2>
+  <p class="solution-intro">Learning Studio was built as a direct answer to everything wrong with how tuition works in this colony. <b>Every decision — batch size, testing, assignments, progress reports — is designed around one goal: genuine education.</b></p>
+  <div class="vs-grid">
+    <div class="vs-col bad">
+      <div class="vs-col-label">Every other tuition class</div>
+      <div class="vs-items">
+        <div class="vs-item"><div class="vs-item-dot"></div><p>Helps complete homework — child doesn't understand why</p></div>
+        <div class="vs-item"><div class="vs-item-dot"></div><p>15–18 students — your child is just another seat</p></div>
+        <div class="vs-item"><div class="vs-item-dot"></div><p>No tests, no assignments — no way to measure progress</p></div>
+        <div class="vs-item"><div class="vs-item-dot"></div><p>Parents find out about problems only at report card time</p></div>
+        <div class="vs-item"><div class="vs-item-dot"></div><p>Teaches what to write — not what to understand</p></div>
+        <div class="vs-item"><div class="vs-item-dot"></div><p>No structure — runs like an informal arrangement</p></div>
+      </div>
+    </div>
+    <div class="vs-col good">
+      <div class="vs-col-label">Learning Studio</div>
+      <div class="vs-items">
+        <div class="vs-item"><div class="vs-item-dot"></div><p><b>Concept-first teaching</b> — child understands before they answer</p></div>
+        <div class="vs-item"><div class="vs-item-dot"></div><p><b>Only 8–9 students</b> — every child is seen, heard, and known</p></div>
+        <div class="vs-item"><div class="vs-item-dot"></div><p><b>Weekly tests + assignments</b> — gaps found and fixed early</p></div>
+        <div class="vs-item"><div class="vs-item-dot"></div><p><b>Regular parent updates</b> — you always know where your child stands</p></div>
+        <div class="vs-item"><div class="vs-item-dot"></div><p><b>Builds real understanding</b> — knowledge that stays beyond the exam</p></div>
+        <div class="vs-item"><div class="vs-item-dot"></div><p><b>Structured like an institution</b> — not a tuition class, an education</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATOR HIGHLIGHT -->
+<div class="educator">
+  <div class="educator-accent"></div>
+  <div class="educator-inner">
+    <div class="educator-eyebrow">★ Know Your Educator</div>
+    <h2 class="educator-title">A scholar who teaches.<br><em>Not a tutor who babysits.</em></h2>
+    <p class="educator-lead">Before you trust someone with your child's education, you deserve to know exactly who they are, what they have achieved, and why it matters.</p>
+    <div class="educator-grid">
+      <div class="educator-left">
+        <div class="qdeg">
+          <div class="qdeg-title">Master of Science — Biochemistry (Hons.)</div>
+          <div class="qdeg-uni">Panjab University, Chandigarh</div>
+          <div class="qdeg-note">Post-graduate specialisation at one of India's most respected institutions. This is the level of academic depth your child's educator brings to every class — not just knowledge of the textbook, but command of the subject.</div>
+          <span class="fdiv">✓ First Division</span>
+        </div>
+        <div class="qdeg">
+          <div class="qdeg-title">Bachelor of Science — Biochemistry (Hons.)</div>
+          <div class="qdeg-uni">Panjab University, Chandigarh</div>
+          <div class="qdeg-note">A rigorous Honours degree in the core sciences your child studies — understood from the ground up. This foundation is what separates a real educator from someone who reads from a guide book.</div>
+          <span class="fdiv">✓ First Division</span>
+        </div>
+      </div>
+      <div class="educator-right">
+        <div class="score-card">
+          <div class="sc-big">95<sup>%</sup></div>
+          <div class="sc-info">
+            <h4>Class X · CBSE Board</h4>
+            <p>Your child's educator has walked this exact path and excelled. When they teach exam strategy, it comes from lived experience of what top performance actually requires.</p>
+          </div>
+        </div>
+        <div class="exp-card">
+          <div class="exp-n">3+</div>
+          <div class="exp-info">
+            <h4>Years Teaching Classes 4–8</h4>
+            <p>Three years of real classroom experience — knowing precisely where children struggle, what confuses them, and how to explain concepts so they genuinely stick.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="educator-quote">
+      <p>The difference between a tuition teacher and an educator is simple — one teaches children what to write in exams. The other teaches them how to think for the rest of their life.</p>
+      <cite>— The Philosophy of Learning Studio</cite>
+    </div>
+  </div>
+  <div class="educator-accent"></div>
+</div>
+
+<!-- PROGRESS -->
+<section class="progress">
+  <p class="ey">Accountability you can see</p>
+  <h2 class="st">Structured like a<br><em>proper institution.</em></h2>
+  <p class="progress-intro">Most tuition classes have no system. You pay, your child goes, nothing is tracked. <b>Learning Studio operates with the structure of a real educational institution — with tests, reports, assignments, and transparent parent communication every step of the way.</b></p>
+  <div class="progress-grid">
+    <div class="pg-card"><span class="pg-icon">📋</span><h4>Weekly Tests</h4><p>Every week, students are tested on what was taught — to find gaps before they become problems. Results are tracked and shared with parents.</p><span class="pg-tag">Every Week</span></div>
+    <div class="pg-card"><span class="pg-icon">📊</span><h4>Progress Reports</h4><p>Parents receive regular updates on test scores, improvement areas, and strengths. You will never be in the dark about your child's progress.</p><span class="pg-tag">Regular Updates</span></div>
+    <div class="pg-card"><span class="pg-icon">📝</span><h4>Structured Assignments</h4><p>Topic-wise practice sheets after every chapter — purposefully designed to reinforce understanding, not just fill time.</p><span class="pg-tag">Every Topic</span></div>
+    <div class="pg-card"><span class="pg-icon">🎯</span><h4>Concept Verification</h4><p>Before moving to the next topic, we verify the child has actually understood the current one. No child is left behind to struggle silently.</p><span class="pg-tag">No Child Left Behind</span></div>
+    <div class="pg-card"><span class="pg-icon">📅</span><h4>Exam Preparation Classes</h4><p>Dedicated extra sessions before every board and unit exam — revision, past paper practice, doubt-clearing. We prepare, not just teach.</p><span class="pg-tag">Before Every Exam</span></div>
+    <div class="pg-card"><span class="pg-icon">📞</span><h4>Parent Communication</h4><p>Direct, regular contact with parents. If your child struggles with something this week — you will know this week, not three months later.</p><span class="pg-tag">Always Transparent</span></div>
+  </div>
+</section>
+
+<!-- CLASSES -->
+<section class="classes">
+  <p class="ey">What we teach</p>
+  <h2 class="st">Classes &amp; subjects<br><em>we cover.</em></h2>
+  <div class="class-grid">
+    <div class="ccard">
+      <div class="ccard-grade">4–5</div>
+      <div class="ccard-tag">Class 4 &amp; 5</div>
+      <h3>All Subjects</h3>
+      <div class="pills">
+        <span class="pill on">Mathematics</span><span class="pill on">Science</span><span class="pill on">English</span><span class="pill on">Hindi</span><span class="pill on">Social Studies</span><span class="pill on">EVS</span>
+      </div>
+      <p class="ccard-note">Complete foundational support — building the habits and understanding that carry a child through every class ahead.</p>
+    </div>
+    <div class="ccard">
+      <div class="ccard-grade">6–8</div>
+      <div class="ccard-tag">Class 6, 7 &amp; 8</div>
+      <h3>Core Subjects</h3>
+      <div class="pills">
+        <span class="pill on">Mathematics</span><span class="pill on">Science</span><span class="pill on">English</span>
+      </div>
+      <p class="ccard-note">The middle school years define academic trajectory. We ensure children don't just survive these classes — they master them.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BATCH -->
+<div class="batch">
+  <div class="batch-text">
+    <p class="ey">The premium difference</p>
+    <h2 class="st">Small batch.<br><em>Every child seen.</em></h2>
+    <p>Quality education is impossible with 18 students in a room. We cap every batch at 8–9 students — not as a selling point, but because it is the only way to actually teach. Your child will never be invisible here.</p>
+  </div>
+  <div class="bars">
+    <p style="color:var(--muted2);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px">Students per batch</p>
+    <div class="bar-row">
+      <span class="bar-lbl">Typical centres</span>
+      <div class="bar-track"><div class="bar-fill them"><span class="bar-val">15–18</span></div></div>
+    </div>
+    <div class="bar-row">
+      <span class="bar-lbl" style="color:var(--yellow)">Learning Studio</span>
+      <div class="bar-track"><div class="bar-fill us"><span class="bar-val">8–9 ✓</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap');
+.testi-hw{background:var(--navy);border-top:1px solid var(--border);padding:76px 52px}
+.hw-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;margin-top:48px}
+.hw-card{position:relative;background:#fffef5;padding:32px 28px 24px;box-shadow:0 4px 24px rgba(0,0,0,.35),0 1px 4px rgba(0,0,0,.2);transform:rotate(-1deg);transition:transform .3s,box-shadow .3s}
+.hw-card:nth-child(2){transform:rotate(1.2deg);background:#f8fff8}
+.hw-card:nth-child(3){transform:rotate(-0.6deg);background:#fff8f5}
+.hw-card:hover{transform:rotate(0deg) scale(1.03);box-shadow:0 12px 40px rgba(0,0,0,.45)}
+.hw-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--yellow-dim),var(--yellow),var(--yellow2))}
+.hw-lines{position:absolute;inset:52px 16px 16px;background-image:repeating-linear-gradient(transparent,transparent 27px,rgba(150,180,220,.25) 27px,rgba(150,180,220,.25) 28px);pointer-events:none}
+.hw-quote-mark{font-family:'Caveat',cursive;font-size:72px;color:rgba(201,160,16,.3);line-height:.6;position:absolute;top:18px;left:20px}
+.hw-text{font-family:'Caveat',cursive;font-size:17.5px;color:#1a1a2e;line-height:1.75;position:relative;z-index:1;margin-top:16px}
+.hw-divider{border:none;border-top:1px solid rgba(100,130,170,.3);margin:16px 0 12px}
+.hw-name{font-family:'Caveat',cursive;font-size:19px;font-weight:700;color:#0b1d3a}
+.hw-detail{font-family:'Caveat',cursive;font-size:14px;color:#5a7090;margin-top:2px}
+.hw-stars{color:var(--yellow);font-size:14px;letter-spacing:2px;margin-bottom:4px}
+/* tape effect on card 1 */
+.hw-card:nth-child(1)::after{content:'';position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:48px;height:20px;background:rgba(245,197,24,.35);border:1px solid rgba(245,197,24,.2)}
+.hw-card:nth-child(2)::after{content:'';position:absolute;top:-10px;right:28px;width:44px;height:18px;background:rgba(180,210,180,.4);border:1px solid rgba(180,210,180,.3)}
+.hw-card:nth-child(3)::after{content:'';position:absolute;top:-10px;left:24px;width:46px;height:19px;background:rgba(245,197,24,.3);border:1px solid rgba(245,197,24,.2)}
+@media(max-width:768px){.hw-grid{grid-template-columns:1fr;gap:36px}.hw-card{transform:none!important}}
+</style>
+
+<section class="testi-hw">
+  <p class="ey">What parents &amp; students say</p>
+  <h2 class="st">In their own<br><em>words.</em></h2>
+  <div class="hw-grid">
+
+    <div class="hw-card">
+      <div class="hw-lines"></div>
+      <div class="hw-quote-mark">"</div>
+      <div class="hw-stars">★★★★★</div>
+      <p class="hw-text">The teacher explains concepts very clearly and using simple words. She also gives many examples which help us to understand difficult topics easily. All my concepts are clear and I score very well in examinations. My marks and understanding have improved significantly over the past year.</p>
+      <hr class="hw-divider">
+      <div class="hw-name">Navya</div>
+      <div class="hw-detail">Class 7 student · Bhavan Vidyalaya</div>
+    </div>
+
+    <div class="hw-card">
+      <div class="hw-lines"></div>
+      <div class="hw-quote-mark">"</div>
+      <div class="hw-stars">★★★★★</div>
+      <p class="hw-text">An excellent tuition teacher who explains concepts in a very simple and effective way. Our child enjoys learning and has shown great improvement in academic performance from last two years. I truly appreciate her hardwork and would like to give my best wishes forever.</p>
+      <hr class="hw-divider">
+      <div class="hw-name">Pooja</div>
+      <div class="hw-detail">Mother · Omaxe New Chandigarh</div>
+    </div>
+
+    <div class="hw-card">
+      <div class="hw-lines"></div>
+      <div class="hw-quote-mark">"</div>
+      <div class="hw-stars">★★★★★</div>
+      <p class="hw-text">The assignments and exam prep classes gave my child the edge she needed. She scored 88% — something we genuinely didn't expect before joining Learning Studio.</p>
+      <hr class="hw-divider">
+      <div class="hw-name">Parent of a Class 6 student</div>
+      <div class="hw-detail">Omaxe New Chandigarh</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Your child deserves<br>a real education.</h2>
+  <p>Only 8–9 seats per batch · Batches start 1st April · Enquire today</p>
+  <div class="cta-btns">
+    <span class="btn-d">📞 +91 70185 78510</span>
+    <span class="btn-o">💬 WhatsApp: +91 70185 78510</span>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ls-logo">
+    <svg viewBox="0 0 64 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="sg2" cx="50%" cy="58%" r="55%">
+          <stop offset="0%" stop-color="#fff8c0"/><stop offset="30%" stop-color="#f5e060"/>
+          <stop offset="65%" stop-color="#f5c518"/><stop offset="100%" stop-color="#c9a010"/>
+        </radialGradient>
+        <linearGradient id="ray2" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#fff0a0" stop-opacity=".95"/>
+          <stop offset="100%" stop-color="#f5c518" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <line x1="2" y1="42" x2="62" y2="42" stroke="rgba(245,197,24,.35)" stroke-width="1.2"/>
+      <line x1="32" y1="24" x2="32" y2="10" stroke="url(#ray2)" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="44" y1="27" x2="51" y2="17" stroke="url(#ray2)" stroke-width="2.0" stroke-linecap="round"/>
+      <line x1="20" y1="27" x2="13" y2="17" stroke="url(#ray2)" stroke-width="2.0" stroke-linecap="round"/>
+      <line x1="50" y1="35" x2="59" y2="30" stroke="url(#ray2)" stroke-width="1.6" stroke-linecap="round"/>
+      <line x1="14" y1="35" x2="5"  y2="30" stroke="url(#ray2)" stroke-width="1.6" stroke-linecap="round"/>
+      <circle cx="32" cy="42" r="15" fill="url(#sg2)"/>
+    </svg>
+    <div class="ls-logo-text">
+      <div class="name">Learning <span>Studio</span></div>
+      <div class="loc">Omaxe New Chandigarh</div>
+    </div>
+  </div>
+  <div class="fnote">M.Sc. Biochemistry · First Division · Panjab University &nbsp;·&nbsp; Limited seats · 1st April start</div>
+</footer>
+
+</body>
+</html>
